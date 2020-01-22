@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>The jQuery Example</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -26,30 +27,29 @@
             </table>
 
 
-            <div class="collapse navbar-collapse text-center " id="collapsenavbar" >
+            <div class="collapse navbar-collapse text-center col-sm-8" id="collapsenavbar" >
                 <ul class="navbar-nav ml-auto">
-
-                    <li>
+                    <li class="">
                         <a class="nav-link " href="#" id="home_id" role="button" >
                             Home
                         </a>
                   </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown col-6 ">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownElectronics" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Electronics
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="electronics_dropdown">
                             <a class="dropdown-item" id="mobile_id" href="#emp">Mobile</a>
                             <a class="dropdown-item" href="#emp">Laptop </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown col-sm-5">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBooks" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Books
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="showbooks">
                             <a class="dropdown-item" id="fiction_id" href="#emp">Fiction</a>
                             <a class="dropdown-item" id="comic_id" href="#emp">Comic </a>
                             <a class="dropdown-item" id="biography_id" href="#emp">Biographies </a>
@@ -57,26 +57,42 @@
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
-
                 </ul>
-
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success bg-success text-light my-2 my-sm-0" type="submit">Search</button>
-                </form>
-
             </div>
-
-
 
         </div>
     </nav>
 
 </div>
 
+<div class="container-fluid bg-info "  style="margin-top: 9%">
+    <div class="row text-center">
+        <div class="col-12" >
+            <form action="#" >
+                <input type="text" placeholder="Search......" name="search" size="120" style="margin-top: 20px">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+   </div>
 
-<br><br><br><br><br>
-<div class="container">
+<hr>
+
+<div class="container-fluid bg-primary">
+
+    <div class="row tabs text-center " style="padding: 1%">
+    <ul type="none" >
+        <li class="btn btn-light  col-sm-3" id="home_tab">Home</li>
+        <li class="btn btn-light  col-sm-5"  id="elec_tab">Electronics</li>
+        <li class="btn btn-light  col-sm-3"  id="books_tab">Books</li>
+
+    </ul>
+    </div>
+</div>
+
+
+<br>
+<div class="container   ">
     <div class="row" id="emp">
 
     </div>
