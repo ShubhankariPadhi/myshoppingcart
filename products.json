@@ -297,7 +297,7 @@
 "rating" : 2,
 "camera":
 {
-
+"front":"not available",
 "rear": "2MP"
 },
 "comments": [
