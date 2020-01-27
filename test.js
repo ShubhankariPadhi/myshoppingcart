@@ -7,13 +7,11 @@ $(document).ready(function () {
     var biography=new Array(Object);
     var fiction=new Array(Object);
     var comic=new Array(Object);
-    var arr=new Array(Object);
 
     var high_ratings=new Array(Object);
     var arr_disp=new Array(Object);
-    var arr_hide=new Array(Object);
 
-   var disp=0,hid=0,hr=0;
+   var disp=0,hr=0;
 
 
 
@@ -36,21 +34,10 @@ $(document).ready(function () {
             ids=data[i].id;
 
 
-           arr_disp[i] = "<ul  id='"+data[i].id+"' type='none'><li>"+"<img class='hom' id='"+data[i].id+"'  style='height: 300px;width: 200px' src='"+data[i].imgPath+"'>"+"</li>"
+           arr_disp[i] = "<ul class='col-lg-3 col-md-4 col-sm-6 col-10'  id='"+data[i].id+"' type='none'><li>"+"<img class='hom col-12' id='"+data[i].id+"'  style='height: 300px;width: 200px' src='"+data[i].imgPath+"'>"+"</li>"
                         +"<li>" + data[i].name + "</li>"+
 
                     "<li> <span><i class='fa fa-inr' aria-hidden='true'></i> </span>" + data[i].price + "</li><li>"+ "<span class='btn btn-success'>"+data[i].rating+"<i class='fa fa-star' aria-hidden='true'></i></span> "+  "</li></ul>";
-
-
-           /* arr_hide[hid] ="<ul class='hom' type='none'><li>"+data[i].description+" </li>"+
-                "<li>"+data[i].type +"</li>"+
-                +"<li>"+data[i].subType+"</li>"+
-                +"<li>"+data[i].brand +"</li>"+
-                +"<li>"+data[i].RAM+"</li>"+
-                +"<li>"+data[i].modelName +"</li>"+
-                +"<li>"+data[i].color +"</li>"+
-                +  " <li></li></ul>";*/
-
 
 
             /*  appending json data to home page with highly rated products */
@@ -82,7 +69,7 @@ $(document).ready(function () {
 
 
        disp++;
-            // hid++;
+
 
         }
 
@@ -118,8 +105,8 @@ $(document).ready(function () {
 
 
                     $("#emp").append(
-                        "<div class='col-sm-5'><img style='height: 500px;width: 450px' src='"+data[i].imgPath+"' >" +
-                        "<br><div ><button class='btn  col-sm-5' style='background-color: orange'>Add to cart</button> "+
+                        "<div class='col-lg-5 col-md-5 col-sm-8  col-12 '><img class='col-sm-12' style='height: 500px;width: 450px' src='"+data[i].imgPath+"' >" +
+                        "<br><div class='row'><button class='btn  col-sm-5' style='background-color: orange'>Add to cart</button> "+
                         "<button class='btn  col-sm-6' style='background-color: tomato'>Add to Buy</button>"+
                         "</div>"+
                         "</div>"+
@@ -136,34 +123,30 @@ $(document).ready(function () {
                         ofr_type=data[i].offers[j].type;
                         ofr_amt=data[i].offers[j].amount;
                         var old_amt=data[i].price;
-                        if(data[i].offers[j].type=="Book now"){
+                        if(data[i].offers[j].amount!=null){
 
                                  data[i].price= old_amt-ofr_amt;
-                                 $("#ofr_price").empty();
+                              $("#ofr_price").empty();
                                 $("#ofr_price").append(
                                 "<span> "+ data[i].price +" <del>"+old_amt+"  </del></span>"
                               );
-
-                             }
-
-                        if(data[i].offers[j].type=="Emi"){
-
-                            $("#ofr_price").append(
-                                "<span>Emi offer price is "+data[i].offers[j].amount+"  </span>"
-                            );
-
-                        }
-
-
-
-
 
                        $('#new').append(
                            "<ul type='none' class='text-success'><h5>Available offers </h5>" +
                            "<li class='text-success'>Get flat " +  ofr_amt+ " <span>off on </span>" + ofr_type + " </li></ul>"
                        );
+                        }
+                         else{
+
+                            $('#new').append(
+                                "<ul type='none' class='text-success'><h5>Available offers </h5>" +
+                                "<li class='text-success'>Get flat " +data[i].offers[j].percentage  + " <span>off on </span>" + ofr_type + " </li></ul>"
+                            );
+                        }
+
                       //  console.log(data[i].offers[j].type)
                     }//offers
+
 
 
                     $("#new").append("<ul type='none'>" +
@@ -317,16 +300,5 @@ $(".append_tot_rating_reviews").append("<span>  " +
 
 
 
-//empdata += "<td>" + data[i].camera.front + "</td>";
-// empdata += "<td>" + data[i].camera.rear + "</td>";
-
-// empdata += "<td>" + data[i].comments[0].text + "</td>";
-//empdata += "<td>" + data[i].comments[0].rating + "</td>";
-//empdata += "<td>" + data[i].comments[0].commentedOn + "</td>";
-//empdata += "<td>" + data[i].comments[0].username + "</td>";
-
-
-// empdata += "<td>" + data[i].offers[0].type + "</td>";
-// empdata += "<td>" + data[i].offers[0].percentage + "</td>";
 
 
